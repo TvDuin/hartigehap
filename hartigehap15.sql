@@ -58,8 +58,9 @@ CREATE TABLE IF NOT EXISTS `drank` (
 --
 
 INSERT INTO `drank` (`DrankID`, `DrankNaam`, `Voorraad`) VALUES
-(32, 'Cola', 100),
-(256, 'Bier', 25);
+(1, 'Cola', 100),
+(2, 'Bier', 25);
+(3, 'Bier', 25);
 
 -- --------------------------------------------------------
 
@@ -80,8 +81,8 @@ CREATE TABLE IF NOT EXISTS `drank_bestelling` (
 --
 
 INSERT INTO `drank_bestelling` (`DrankID`, `BestelID`, `hoeveelheid`) VALUES
-(32, 1, 3),
-(32, 25, 3);
+(1, 1, 3),
+(2, 25, 3);
 
 -- --------------------------------------------------------
 
@@ -115,10 +116,10 @@ CREATE TABLE IF NOT EXISTS `gerecht` (
 --
 
 INSERT INTO `gerecht` (`GerechtID`, `GerechtNaam`, `GerechtGegevens`, `Prijs`) VALUES
-(58745, 'Bief', 'Koei', '12.50'),
-(69697, 'Mayonaise', 'Lekker vet', '9.99'),
-(79697, 'Mayonaise', 'Lekker vet', '9.99'),
-(269692, 'Mayonase', 'lekker vet', '1.00');
+(1, 'Biefstuk', 'Koe', '12.50'),
+(2, 'Mayonaise', 'Lekker vet', '9.99'),
+(3, 'Mayonaise', 'Lekker vet', '9.99'),
+(4, 'Mayonase', 'lekker vet', '1.00');
 
 -- --------------------------------------------------------
 
