@@ -6,34 +6,34 @@ import java.util.ArrayList;
 
 
 public class Gerecht {
-    
+
     private String gerechtGegevens;
     private String gerechtNaam;
     private double gerechtPrijs;
-    private int gerechtID;
+    private int gerechtId;
     private ArrayList<Ingredient> ingredienten;
-    
-    public Gerecht(int gerechtID, String gerechtNaam, String gerechtGegevens, double gerechtPrijs)
+
+    public Gerecht(int gerechtId, String gerechtNaam, String gerechtGegevens, double gerechtPrijs)
     {
-        this.gerechtID = gerechtID;
+        this.gerechtId = gerechtId;
         this.gerechtNaam = gerechtNaam;
         this.gerechtGegevens = gerechtGegevens;
         this.gerechtPrijs = gerechtPrijs;
     }
-    public  int getGerechtID()
+    public  int getGerechtId()
    {
-       return gerechtID;
+       return gerechtId;
    }
     public String getGerechtNaam()
     {
         return gerechtNaam;
     }
-    
+
    public String getGerechtGegevens()
    {
        return gerechtGegevens;
    }
-   
+
    public double getGerechtPrijs()
    {
        return gerechtPrijs;
@@ -42,11 +42,11 @@ public class Gerecht {
    {
        return ingredienten;
    }
-   
-   
-   public void setGerechtID(int gerechtID)
+
+
+   public void setGerechtID(int gerechtId)
    {
-       this.gerechtID = gerechtID;
+       this.gerechtId = gerechtId;
    }
    public void setGerechtNaam(String gerechtNaam)
    {
@@ -60,7 +60,7 @@ public class Gerecht {
    {
        this.gerechtPrijs = gerechtPrijs;
    }
-  
+
    public void addIngredient(Ingredient ingredient)
    {
        ingredienten.add(ingredient);

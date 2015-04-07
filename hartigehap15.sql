@@ -131,10 +131,10 @@ INSERT INTO `gerecht` (`GerechtID`, `GerechtNaam`, `GerechtGegevens`, `Prijs`) V
 
 CREATE TABLE IF NOT EXISTS `gerecht_bestelling` (
   `GerechtID` int(5) NOT NULL,
-  `BestelID` int(10) NOT NULL,
+  `BestelId` int(10) NOT NULL,
   `hoeveelheid` int(2) NOT NULL,
-  PRIMARY KEY (`GerechtID`,`BestelID`),
-  KEY `Ger_Ger` (`BestelID`)
+  PRIMARY KEY (`GerechtID`,`BestelId`),
+  KEY `Ger_Ger` (`BestelId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

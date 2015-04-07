@@ -17,9 +17,13 @@ public class BestellingDAO {
       try {
         Statement stmt = connection.createStatement();
         stmt.execute("INSERT INTO bestelling (`bestelId`, `tafelId`) VALUES(" + bestelling.getId() + "," + bestelling.getTafelId + ");");
-        
+
         for(Drank d : bestelling.getDranken()) {
-          stmt.execute("INSERT INTO drank_bestelling (`DrankID`, `BestelID`, `hoeveelheid`) VALUES (" + d.getDrankId() + "," + bestelling.getId() + "," + d.get);
+          stmt.execute("INSERT INTO drank_bestelling (`DrankID`, `BestelId`, `hoeveelheid`) VALUES (" + d.getDrankId() + "," + bestelling.getId() + ", `1`");
+        }
+        
+        for(Gerecht g : bestelling.getGerechten()) {
+          stmt.execute("INSERT INTO gerecht_bestelling (`GerechtID`, `BestelId`, `hoeveelheid`) VALUES (" + g.getGerechtId() + "," + bestelling.getId() + ", `1`");
         }
       }
 

@@ -1,5 +1,7 @@
 package businessEntity;
 
+//needs to be finished for optimization
+
 public class DrankBestelling {
 
   private int drankID;
@@ -11,4 +13,6 @@ public class DrankBestelling {
     this.bestelID = bestelID;
     this.hoeveelheid = hoeveelheid;
   }
+
+
 }
