@@ -3,40 +3,40 @@ package dataStorage;
 public class BestellingDAO {
   public BestellingDAO()
   {
-      // Nothing to be initialized. This is a stateless class. Constructor
-      // has been added to explicitely make this clear.
+    // Nothing to be initialized. This is a stateless class. Constructor
+    // has been added to explicitely make this clear.
   }
 
-  public ArrayList<Ingredient> getAllIngredient() { //Method which returns all the stored beverages
-    ArrayList<Ingredient> ingredienten = new ArrayList<Ingredient>();
+  public void addBestelling(Bestelling bestelling) { //Method which adds orders to the DB
 
     DatabaseConnection connection = new DatabaseConnection();
     if(connection.openConnection())
     {
-        // If a connection was successfully setup, execute the INSERT statement
-        //How to formulate an insert statement????????!!!!.test
-        ResultSet resultset = connection.executeSQLSelectStatement(
-            "SELECT * FROM ingredient;");
+      // If a connection was successfully setup, execute the INSERT statement
+      //How to formulate an insert statement????????!!!!.test
+      try {
+        Statement stmt = connection.createStatement();
+        stmt.execute("INSERT INTO bestelling (`bestelId`, `tafelId`) VALUES(" + bestelling.getId() + "," + bestelling.getTafelId + ");");
+        
+        for(Drank d : bestelling.getDranken()) {
+          stmt.execute("INSERT INTO drank_bestelling (`DrankID`, `BestelID`, `hoeveelheid`) VALUES (" + d.getDrankId() + "," + bestelling.getId() + "," + d.get);
+        }
+      }
 
-        if(resultset != null)
-        {
-            try
-            {
-                while(resultset.next()) {
-                  ingredienten.add(new Ingredient(resultset.getInt("IngredientID"), resultset.getString("IngredientNaam"), resultset.getInt("Voorraad")));
-                }
-            }
-            catch(SQLException e)
-            {
-                System.out.println(e);
-                member = null;
-            }
+      catch(SQLException e) {
+      System.out.println(e);
+      }
+
+      finally {
+        try {
+          stmt.close();
+          connection.closeConnection();
         }
 
-        //Close DB connection
-        connection.closeConnection();
+        catch (Exception e) {
+              e.printStackTrace();
+        }
+      }
     }
-
-    return ingredienten;
   }
 }

@@ -27,16 +27,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `bestelling` (
-  `BestelID` int(10) NOT NULL,
-  `tafelID` int(20) NOT NULL,
-  PRIMARY KEY (`BestelID`)
+  `bestelId` int(10) NOT NULL,
+  `tafelId` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `bestelling`
 --
 
-INSERT INTO `bestelling` (`BestelID`, `tafelID`) VALUES
+INSERT INTO `bestelling` (`bestelId`, `tafelId`) VALUES
 (1, 1),
 (25, 22);
 
@@ -74,15 +74,15 @@ CREATE TABLE IF NOT EXISTS `drank_bestelling` (
   `DrankID` int(5) NOT NULL,
   `BestelID` int(10) NOT NULL,
   `hoeveelheid` int(10) NOT NULL,
-  PRIMARY KEY (`DrankID`,`BestelID`),
-  KEY `Drank1` (`BestelID`)
+  PRIMARY KEY (`DrankID`,`BestelId`),
+  KEY `Drank1` (`BestelId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `drank_bestelling`
 --
 
-INSERT INTO `drank_bestelling` (`DrankID`, `BestelID`, `hoeveelheid`) VALUES
+INSERT INTO `drank_bestelling` (`DrankID`, `BestelId`, `hoeveelheid`) VALUES
 (32, 1, 3),
 (32, 25, 3);
 
