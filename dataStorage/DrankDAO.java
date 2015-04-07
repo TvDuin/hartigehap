@@ -1,11 +1,9 @@
 package dataStorage;
 
-import library.domain.Member;
+import businessEntity.Drank;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import library.domain.Loan;
-import library.domain.Reservation;
 
 public class DrankDAO {
 
@@ -36,7 +34,6 @@ public class DrankDAO {
               catch(SQLException e)
               {
                   System.out.println(e);
-                  member = null;
               }
           }
 

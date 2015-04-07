@@ -5,6 +5,9 @@
  */
 package businessPresentation;
 
+//import java.util.ArrayList;
+
+
 /**
  *
  * @author Maarten
@@ -14,6 +17,9 @@ public class JPanel extends javax.swing.JPanel {
     /**
      * Creates new form JPanel
      */
+    //private ArrayList<String> combobox1;
+    //private ArrayList<String> combobox2;
+    
     public JPanel() {
         initComponents();
     }
@@ -40,7 +46,11 @@ public class JPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }
+            //for(Owner o: cartaxManager.getOwns()){
+                //  jComboBox1.addItem(o.getGerechtNaam());
+                //}
+        ));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -71,6 +81,11 @@ public class JPanel extends javax.swing.JPanel {
         jTextField2.setText("1");
 
         jButton2.setText("Voeg toe");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Hoeveelheid");
 
@@ -124,7 +139,7 @@ public class JPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(31, 31, 31))
             .addGroup(layout.createSequentialGroup()
@@ -144,7 +159,7 @@ public class JPanel extends javax.swing.JPanel {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(jButton2)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -158,11 +173,40 @@ public class JPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        /* jComboBox1 
+        int i = Integer.parseInt("" + jTextField1);
+        int x = 0; 
+        while (x < i) {
+        ArrayList<String> combobox1 = new ArrayList();
+        combobox1.add(jComboBox1.getSelectedItem() + "\n");
+        x++;
+        }
+        
+        jComboBox2
+        int b = Integer.parseInt("" + jTextField2);
+        int c = 0; 
+        while (c < b) {
+        ArrayList<String> combobox2 = new ArrayList();
+        combobox2.add(jComboBox2.getSelectedItem() + "\n");
+        x++;
+        }
+        
+        jTextArea1.setText( combobox1 + " " + combobox2 );*/
+        
+        jTextArea1.setText(jComboBox1.getSelectedItem() + " \n" + jComboBox2.getSelectedItem());           
+          
+                   
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox jComboBox1;
+    public javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

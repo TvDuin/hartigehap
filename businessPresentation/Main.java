@@ -2,6 +2,7 @@ package businessPresentation;
 
 //Main class that runs the program.
 
+import dataStorage.DrankDAO;
 import javax.swing.JFrame;
 
 
@@ -16,5 +17,8 @@ public class Main extends JFrame {
                 frame.setContentPane (paneel);
                 frame.setVisible(true);
     
+                
+                DrankDAO drankDAO = new DrankDAO();
+                drankDAO.getAllDrank();
 	}
 }
