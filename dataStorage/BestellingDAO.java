@@ -14,7 +14,7 @@ public class BestellingDAO {
     if(connection.openConnection())
     {
         // If a connection was successfully setup, execute the INSERT statement
-        //How to formulate an insert statement????????!!!!.
+        //How to formulate an insert statement????????!!!!.test
         ResultSet resultset = connection.executeSQLSelectStatement(
             "SELECT * FROM ingredient;");
 
