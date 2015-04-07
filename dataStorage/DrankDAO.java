@@ -30,7 +30,7 @@ public class DrankDAO {
               try
               {
                   while(resultset.next()) {
-                    dranken.add(new Drank(resultset.getInt("DrankID"), resultset.getString("DrankNaam"), resultset.getInt("Voorraad")));
+                    dranken.add(new Drank(resultset.getInt("DrankID"), resultset.getString("DrankNaam"), resultset.getInt("Voorraad"), resultset.getDouble("Prijs")));
                   }
               }
               catch(SQLException e)
