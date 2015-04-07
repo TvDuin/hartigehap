@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: 127.0.0.1
--- Genereertijd: 07 apr 2015 om 12:32
+-- Genereertijd: 07 apr 2015 om 13:22
 -- Serverversie: 5.5.34
 -- PHP-versie: 5.4.22
 
@@ -82,6 +82,19 @@ CREATE TABLE IF NOT EXISTS `drank_bestelling` (
 INSERT INTO `drank_bestelling` (`DrankID`, `BestelID`, `hoeveelheid`) VALUES
 (32, 1, 3),
 (32, 25, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `gebruiker`
+--
+
+CREATE TABLE IF NOT EXISTS `gebruiker` (
+  `GebruikerID` int(5) NOT NULL,
+  `GebruikersNaam` varchar(15) NOT NULL,
+  `Wachtwoord` varchar(20) NOT NULL,
+  PRIMARY KEY (`GebruikerID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
