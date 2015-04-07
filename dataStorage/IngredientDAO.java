@@ -1,5 +1,10 @@
 package dataStorage;
 
+import businessEntity.Ingredient;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class IngredientDAO {
 
     public IngredientDAO()
@@ -29,7 +34,6 @@ public class IngredientDAO {
               catch(SQLException e)
               {
                   System.out.println(e);
-                  member = null;
               }
           }
 

@@ -30,7 +30,7 @@ public class DatabaseConnection {
             {
                 // Try to create a connection with the library database; No user and password have been set.
                 connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost" , "", "");
+                    "jdbc:mysql://localhost/hartigehap" , "root", "");
 
                 if(connection != null)
                 {

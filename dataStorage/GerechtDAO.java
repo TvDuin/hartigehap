@@ -1,11 +1,9 @@
 package dataStorage;
 
-import library.domain.Member;
+import businessEntity.Gerecht;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import library.domain.Loan;
-import library.domain.Reservation;
 
 public class GerechtDAO {
 
@@ -36,7 +34,6 @@ public class GerechtDAO {
               catch(SQLException e)
               {
                   System.out.println(e);
-                  member = null;
               }
           }
 
@@ -58,7 +55,7 @@ public class GerechtDAO {
           {
               // Execute delete statement using the given DrankId
               result = connection.executeSQLDeleteStatement(
-                  "DELETE FROM gerecht WHERE GerechtID = " + gerechtDatVerwijderdMoetWorden.getDrankId() + ";");
+                  "DELETE FROM gerecht WHERE GerechtID = " + gerechtDatVerwijderdMoetWorden.getGerechtId() + ";");
 
               // Finished with the connection, so close it.
               connection.closeConnection();

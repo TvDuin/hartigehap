@@ -1,26 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 4.0.9
--- http://www.phpmyadmin.net
---
--- Machine: 127.0.0.1
--- Genereertijd: 07 apr 2015 om 14:29
--- Serverversie: 5.5.34
--- PHP-versie: 5.4.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+DROP DATABASE IF EXISTS `hartigehap`;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Databank: `hartigehap15`
---
-
--- --------------------------------------------------------
+CREATE DATABASE `hartigehap` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `hartigehap`;
 
 --
 -- Tabelstructuur voor tabel `bestelling`
@@ -29,7 +14,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `bestelling` (
   `bestelId` int(10) NOT NULL,
   `tafelId` int(10) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`bestelId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -206,6 +191,3 @@ ALTER TABLE `ingredient_gerecht`
   ADD CONSTRAINT `Ing_Ger` FOREIGN KEY (`gerechtID`) REFERENCES `gerecht` (`GerechtID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `ing_ing` FOREIGN KEY (`ingredientID`) REFERENCES `ingredient` (`ingredientID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

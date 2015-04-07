@@ -2,6 +2,9 @@ package businessEntity;
 
 //Contains all information about every dish
 
+import java.util.ArrayList;
+
+
 public class Bestelling {
 
   public int id;
