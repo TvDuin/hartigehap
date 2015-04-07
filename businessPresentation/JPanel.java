@@ -177,18 +177,18 @@ public class JPanel extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
-        /* jComboBox1 
-        int i = Integer.parseInt("" + jTextField1);
-        int x = 0; 
+        /*jComboBox1 
+        int i = 1 + Integer.parseInt("" + jTextField1.getText());
+        int x = 1; 
         while (x < i) {
         ArrayList<String> combobox1 = new ArrayList();
         combobox1.add(jComboBox1.getSelectedItem() + "\n");
         x++;
         }
         
-        jComboBox2
-        int b = Integer.parseInt("" + jTextField2);
-        int c = 0; 
+        //jComboBox2
+        int b = 1 + Integer.parseInt("" + jTextField2.getText());
+        int c = 1; 
         while (c < b) {
         ArrayList<String> combobox2 = new ArrayList();
         combobox2.add(jComboBox2.getSelectedItem() + "\n");
@@ -197,7 +197,7 @@ public class JPanel extends javax.swing.JPanel {
         
         jTextArea1.setText( combobox1 + " " + combobox2 );*/
         
-        jTextArea1.setText(jComboBox1.getSelectedItem() + " \n" + jComboBox2.getSelectedItem());           
+        jTextArea1.setText(jComboBox1.getSelectedItem() + " \n" + jComboBox2.getSelectedItem());  
           
                    
     }//GEN-LAST:event_jButton2ActionPerformed
