@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: 127.0.0.1
--- Genereertijd: 07 apr 2015 om 13:22
+-- Genereertijd: 07 apr 2015 om 14:29
 -- Serverversie: 5.5.34
 -- PHP-versie: 5.4.22
 
@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `drank` (
   `DrankID` int(5) NOT NULL,
   `DrankNaam` varchar(20) NOT NULL,
   `Voorraad` int(10) NOT NULL,
+  `prijs` double(5,2) NOT NULL,
   PRIMARY KEY (`DrankID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -57,10 +58,11 @@ CREATE TABLE IF NOT EXISTS `drank` (
 -- Gegevens worden uitgevoerd voor tabel `drank`
 --
 
-INSERT INTO `drank` (`DrankID`, `DrankNaam`, `Voorraad`) VALUES
-(1, 'Cola', 100),
-(2, 'Bier', 25);
-(3, 'Bier', 25);
+INSERT INTO `drank` (`DrankID`, `DrankNaam`, `Voorraad`, `prijs`) VALUES
+(3, 'pepsi', 129, 2.00),
+(4, 'ice Tea', 123, 3.00),
+(32, 'Cola', 100, 2.44),
+(256, 'Bier', 25, 4.00);
 
 -- --------------------------------------------------------
 
@@ -81,8 +83,8 @@ CREATE TABLE IF NOT EXISTS `drank_bestelling` (
 --
 
 INSERT INTO `drank_bestelling` (`DrankID`, `BestelID`, `hoeveelheid`) VALUES
-(1, 1, 3),
-(2, 25, 3);
+(32, 1, 3),
+(32, 25, 3);
 
 -- --------------------------------------------------------
 
@@ -107,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `gerecht` (
   `GerechtID` int(5) NOT NULL,
   `GerechtNaam` varchar(20) NOT NULL,
   `GerechtGegevens` varchar(20) NOT NULL,
-  `Prijs` decimal(5,2) NOT NULL,
+  `Prijs` double(5,2) NOT NULL,
   PRIMARY KEY (`GerechtID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -116,10 +118,10 @@ CREATE TABLE IF NOT EXISTS `gerecht` (
 --
 
 INSERT INTO `gerecht` (`GerechtID`, `GerechtNaam`, `GerechtGegevens`, `Prijs`) VALUES
-(1, 'Biefstuk', 'Koe', '12.50'),
-(2, 'Mayonaise', 'Lekker vet', '9.99'),
-(3, 'Mayonaise', 'Lekker vet', '9.99'),
-(4, 'Mayonase', 'lekker vet', '1.00');
+(1, 'Bief', 'Koe', 12.50),
+(2, 'Schnitzel', 'gebraden kalfsvlees', 9.99),
+(3, 'Gebakken Aardappelen', 'aardappelen', 9.99),
+(4, 'friet', 'aardappelen', 4.00);
 
 -- --------------------------------------------------------
 
@@ -153,7 +155,9 @@ CREATE TABLE IF NOT EXISTS `ingredient` (
 --
 
 INSERT INTO `ingredient` (`ingredientID`, `ingredientnaam`, `voorraad`) VALUES
-(522, 'Biefstuk Koe', 200);
+(1, 'Biefstuk Koe', 200),
+(2, 'kalfsvlees', 22),
+(3, 'aardappelen', 125);
 
 -- --------------------------------------------------------
 
@@ -173,7 +177,9 @@ CREATE TABLE IF NOT EXISTS `ingredient_gerecht` (
 --
 
 INSERT INTO `ingredient_gerecht` (`ingredientID`, `gerechtID`) VALUES
-(522, 58745);
+(1, 1),
+(3, 3),
+(3, 4);
 
 --
 -- Beperkingen voor gedumpte tabellen
