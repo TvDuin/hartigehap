@@ -28,9 +28,9 @@ public class DatabaseConnection {
         {
             try
             {
-                // Try to create a connection with the library database
+                // Try to create a connection with the library database; No user and password have been set
                 connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/library" , "biblio1", "boekje");
+                    "jdbc:mysql://localhost" , "", "");
 
                 if(connection != null)
                 {
