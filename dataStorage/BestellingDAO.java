@@ -3,6 +3,7 @@ package dataStorage;
 import businessEntity.Bestelling;
 import businessEntity.Drank;
 import businessEntity.Gerecht;
+import businessEntity.Order;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
