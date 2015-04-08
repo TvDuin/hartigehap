@@ -1,4 +1,4 @@
-
+﻿
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -33,18 +33,11 @@ INSERT INTO `bestelling` (`bestelId`, `tafelId`) VALUES
 
 CREATE TABLE IF NOT EXISTS `simpleorder`(
   `ID` int(4) NOT NULL AUTO_INCREMENT,
-  `ItemID` int(12) NOT NULL
+  `ItemID` int(12) NOT NULL,
+PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexen voor geëxporteerde tabellen
---
 
---
--- Indexen voor tabel `simpleorder`
---
-ALTER TABLE `simpleorder`
- ADD PRIMARY KEY (`ID`);
 
 -- --------------------------------------------------------
 
