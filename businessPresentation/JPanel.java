@@ -56,6 +56,13 @@ public class JPanel extends javax.swing.JPanel {
         jButton1.setText("Bestelling Plaatsen");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+              BestellingDAO send = new BestellingDAO();
+
+              for(String o : orders){
+                send.addSimpleOrder(Integer.parseInt(o));
+              }
+
                 jButton1ActionPerformed(evt);
             }
         });
@@ -68,12 +75,6 @@ public class JPanel extends javax.swing.JPanel {
         jButton2.setText("Voeg toe");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BestellingDAO send = new BestellingDAO();
-
-                for(String o : orders){
-                  send.addSimpleOrder(Integer.parseInt(o));
-                }
-
                 jButton2ActionPerformed(evt);
             }
         });

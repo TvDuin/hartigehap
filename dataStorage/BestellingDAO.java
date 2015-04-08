@@ -21,14 +21,14 @@ public class BestellingDAO {
         {
             // If a connection was successfully setup, execute the INSERT statement
 
-            ResultSet resultset = connection.executeSQLSelectStatement("INSERT INTO bestelling (`bestelId`, `tafelId`) VALUES(" + bestelling.getId() + "," + bestelling.getTafelId() + ");");
+            ResultSet resultset = connection.executeUpdate("INSERT INTO bestelling (`bestelId`, `tafelId`) VALUES(" + bestelling.getId() + "," + bestelling.getTafelId() + ");");
 
             for(Drank d : bestelling.getDranken()) {
-                ResultSet resultset2 = connection.executeSQLSelectStatement("INSERT INTO drank_bestelling (`DrankID`, `BestelId`, `hoeveelheid`) VALUES (" + d.getDrankId() + "," + bestelling.getId() + ", `1`");
+                ResultSet resultset2 = connection.executeUpdate("INSERT INTO drank_bestelling (`DrankID`, `BestelId`, `hoeveelheid`) VALUES (" + d.getDrankId() + "," + bestelling.getId() + ", `1`");
             }
 
             for(Gerecht g : bestelling.getGerechten()) {
-                ResultSet resultset3 = connection.executeSQLSelectStatement("INSERT INTO gerecht_bestelling (`GerechtID`, `BestelId`, `hoeveelheid`) VALUES (" + g.getGerechtId() + "," + bestelling.getId() + ", `1`");
+                ResultSet resultset3 = connection.executeUpdate("INSERT INTO gerecht_bestelling (`GerechtID`, `BestelId`, `hoeveelheid`) VALUES (" + g.getGerechtId() + "," + bestelling.getId() + ", `1`");
             }
 
 
@@ -39,6 +39,6 @@ public class BestellingDAO {
     }
 
     public void addSimpleOrder(int i) {
-      ResultSet resultset = connection.executeSQLSelectStatement("INSERT INTO simpleorder (`itemID`) VALUES(" + i + ");");
+      ResultSet resultset = connection.executeUpdate("INSERT INTO simpleorder (`itemID`) VALUES(" + i + ");");
     }
 }
