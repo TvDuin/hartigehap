@@ -34,6 +34,7 @@ INSERT INTO `bestelling` (`bestelId`, `tafelId`) VALUES
 CREATE TABLE IF NOT EXISTS `simpleorder`(
   `ID` int(4) NOT NULL AUTO_INCREMENT,
   `ItemID` int(12) NOT NULL,
+  `TafelID` int(12) NOT NULL,
 PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
