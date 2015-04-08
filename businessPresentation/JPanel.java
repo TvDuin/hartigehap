@@ -167,6 +167,7 @@ public class JPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        jTextArea1.removeAll();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
