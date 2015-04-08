@@ -7,6 +7,10 @@ package businessPresentation;
 
 //import java.util.ArrayList;
 
+import dataStorage.BestellingDAO;
+import java.util.ArrayList;
+
+
 
 /**
  *
@@ -194,7 +198,7 @@ public class JPanel extends javax.swing.JPanel {
         orders.add(jTextField4.getText());
 
         //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());
-        jTextArea1.append(jTextField3.getText() + " \n" + jTextField4.getText() + "\n");
+        jTextArea1.append(jTextField3.getText() + "X" + jTextField1.getText() + " \n" + jTextField4.getText() + "X" + jTextField1.getText() + "\n");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
