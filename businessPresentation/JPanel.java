@@ -17,11 +17,12 @@ public class JPanel extends javax.swing.JPanel {
     /**
      * Creates new form JPanel
      */
-    //private ArrayList<String> combobox1;
+    private ArrayList<String> orders;
     //private ArrayList<String> combobox2;
-    
+
     public JPanel() {
         initComponents();
+        orders = new ArrayList<String>();
     }
 
     /**
@@ -67,6 +68,12 @@ public class JPanel extends javax.swing.JPanel {
         jButton2.setText("Voeg toe");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BestellingDAO send = new BestellingDAO();
+
+                for(String o : orders){
+                  send.addSimpleOrder(Integer.parseInt(o));
+                }
+
                 jButton2ActionPerformed(evt);
             }
         });
@@ -151,39 +158,42 @@ public class JPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
+
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
-        /*jComboBox1 
+
+        /*jComboBox1
         int i = 1 + Integer.parseInt("" + jTextField1.getText());
-        int x = 1; 
+        int x = 1;
         while (x < i) {
         ArrayList<String> combobox1 = new ArrayList();
         combobox1.add(jComboBox1.getSelectedItem() + "\n");
         x++;
         }hthgvrgtr
-        
+
         //jComboBox2
         int b = 1 + Integer.parseInt("" + jTextField2.getText());
-        int c = 1; 
+        int c = 1;
         while (c < b) {
         ArrayList<String> combobox2 = new ArrayList();
         combobox2.add(jComboBox2.getSelectedItem() + "\n");
         x++;
         }
-        
+
         jTextArea1.setText( combobox1 + " " + combobox2 );*/
-        
-        //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());  
-        jTextArea1.append(jTextField3.getText() + " \n" + jTextField4.getText() + "\n");  
-                   
+
+        //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());
+        orders.add(jTextField3.getText());
+        orders.add(jTextField4.getText());
+
+        //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());
+        jTextArea1.append(jTextField3.getText() + " \n" + jTextField4.getText() + "\n");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed

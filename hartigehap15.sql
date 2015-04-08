@@ -12,7 +12,7 @@ USE `hartigehap`;
 --
 
 CREATE TABLE IF NOT EXISTS `bestelling` (
-  `bestelId` int(10) NOT NULL,
+  `bestelId` int(10) NOT NULL AUTO_INCREMENT,
   `tafelId` int(10) NOT NULL,
   PRIMARY KEY (`bestelId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -211,4 +211,3 @@ ALTER TABLE `gerecht_bestelling`
 ALTER TABLE `ingredient_gerecht`
   ADD CONSTRAINT `Ing_Ger` FOREIGN KEY (`gerechtID`) REFERENCES `gerecht` (`GerechtID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `ing_ing` FOREIGN KEY (`ingredientID`) REFERENCES `ingredient` (`ingredientID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
