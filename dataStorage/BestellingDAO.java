@@ -20,23 +20,25 @@ public class BestellingDAO {
         if(connection.openConnection())
         {
             // If a connection was successfully setup, execute the INSERT statement
-            //How to formulate an insert statement????????!!!!.test        
 
             ResultSet resultset = connection.executeSQLSelectStatement("INSERT INTO bestelling (`bestelId`, `tafelId`) VALUES(" + bestelling.getId() + "," + bestelling.getTafelId() + ");");
-            
+
             for(Drank d : bestelling.getDranken()) {
                 ResultSet resultset2 = connection.executeSQLSelectStatement("INSERT INTO drank_bestelling (`DrankID`, `BestelId`, `hoeveelheid`) VALUES (" + d.getDrankId() + "," + bestelling.getId() + ", `1`");
             }
-        
+
             for(Gerecht g : bestelling.getGerechten()) {
                 ResultSet resultset3 = connection.executeSQLSelectStatement("INSERT INTO gerecht_bestelling (`GerechtID`, `BestelId`, `hoeveelheid`) VALUES (" + g.getGerechtId() + "," + bestelling.getId() + ", `1`");
             }
-      
-            
+
+
             //Close DB connection
             connection.closeConnection();
         }
-        
+
+    }
+
+    public void addSimpleOrder(int i) {
+      ResultSet resultset = connection.executeSQLSelectStatement("INSERT INTO simpleorder (`itemID`) VALUES(" + i + ");");
     }
 }
-
