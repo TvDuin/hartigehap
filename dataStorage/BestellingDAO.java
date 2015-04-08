@@ -38,13 +38,13 @@ public class BestellingDAO {
 
     }
 
-    public void addSimpleOrder(int i) {
+    public void addSimpleOrder(Order o) {
       DatabaseConnection conn = new DatabaseConnection();
    if(connection.openConnection())
    {
       stmt = conn.createStatement();
 
-      String sql = "INSERT INTO simpleorder (`itemID`) VALUES(" + i + ");";
+      String sql = "INSERT INTO simpleorder (`itemID`, `tafelID`) VALUES(" + o.getID + "," + o.getTafelID + ");";
       stmt.executeUpdate(sql);
     }
 }

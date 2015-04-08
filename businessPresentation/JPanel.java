@@ -17,12 +17,12 @@ public class JPanel extends javax.swing.JPanel {
     /**
      * Creates new form JPanel
      */
-    private ArrayList<String> orders;
+    private ArrayList<Order> orders;
     //private ArrayList<String> combobox2;
 
     public JPanel() {
         initComponents();
-        orders = new ArrayList<String>();
+        orders = new ArrayList<Order>();
     }
 
     /**
@@ -59,8 +59,8 @@ public class JPanel extends javax.swing.JPanel {
 
               BestellingDAO send = new BestellingDAO();
 
-              for(String o : orders){
-                send.addSimpleOrder(Integer.parseInt(o));
+              for(Order o : orders){
+                send.addSimpleOrder(o);
               }
 
                 jButton1ActionPerformed(evt);
@@ -190,8 +190,8 @@ public class JPanel extends javax.swing.JPanel {
         jTextArea1.setText( combobox1 + " " + combobox2 );*/
 
         //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());
-        orders.add(jTextField3.getText());
-        orders.add(jTextField4.getText());
+        orders.add(new Order(Integer.parseInt(jTextField3.getText()), Integer.parseInt(jTextField1.getText())));
+        orders.add(new Order(Integer.parseInt(jTextField4.getText()), Integer.parseInt(jTextField1.getText())));
 
         //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());
         jTextArea1.append(jTextField3.getText() + " \n" + jTextField4.getText() + "\n");
