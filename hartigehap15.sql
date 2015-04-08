@@ -28,6 +28,27 @@ INSERT INTO `bestelling` (`bestelId`, `tafelId`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabelstructuur voor tabel `simpleorder`
+--
+
+CREATE TABLE IF NOT EXISTS `simpleorder`(
+  `ID` int(4) NOT NULL AUTO_INCREMENT,
+  `ItemID` int(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexen voor geëxporteerde tabellen
+--
+
+--
+-- Indexen voor tabel `simpleorder`
+--
+ALTER TABLE `simpleorder`
+ ADD PRIMARY KEY (`ID`);
+
+-- --------------------------------------------------------
+
+--
 -- Tabelstructuur voor tabel `drank`
 --
 
