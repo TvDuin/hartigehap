@@ -155,7 +155,7 @@ public class JPanel extends javax.swing.JPanel {
         ArrayList<String> combobox1 = new ArrayList();
         combobox1.add(jComboBox1.getSelectedItem() + "\n");
         x++;
-        }
+        }hthgvrgtr
         
         //jComboBox2
         int b = 1 + Integer.parseInt("" + jTextField2.getText());
