@@ -147,12 +147,10 @@ public class DatabaseConnection {
             try
             {
                 statement.executeUpdate(query); //what does executeUpdate do? Is this needed or do we need to use another function?
-                result = true; //Do i need to use executequery?? Research this.
             } //Also check when POC and LAM are due. VERY IMPORTANT!
             catch(SQLException e)
             {
                 System.out.println(e);
-                result = false;
             }
         }
     }
