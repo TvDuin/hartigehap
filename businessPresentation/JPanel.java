@@ -9,7 +9,9 @@ package businessPresentation;
 
 import businessEntity.Order;
 import dataStorage.BestellingDAO;
+import java.awt.Component;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -170,7 +172,7 @@ public class JPanel extends javax.swing.JPanel {
         jTextField3.setText("");
         jTextField4.setText("");
         jTextField1.setText("");
-        JOptionPane.showMessageDialog(frame,"Bestelling is toegevoegd aan de database.");
+        JOptionPane.showMessageDialog(jButton1,"Bestelling is toegevoegd aan de database.");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
