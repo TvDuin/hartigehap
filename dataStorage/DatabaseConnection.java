@@ -137,10 +137,8 @@ public class DatabaseConnection {
         return result;
     }
 
-    public boolean executeSQLInsertStatement(String query) //Executes insert query, returns true when succeeded
+    public void executeSQLInsertStatement(String query) //Executes insert query, returns true when succeeded
     {
-        boolean result = false;
-
         // First, check whether a some query was passed and the connection with
         // the database.
         if(query != null && connectionIsOpen())
@@ -157,7 +155,5 @@ public class DatabaseConnection {
                 result = false;
             }
         }
-
-        return result;
     }
 }

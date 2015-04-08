@@ -21,14 +21,14 @@ public class BestellingDAO {
         {
             // If a connection was successfully setup, execute the INSERT statement
 
-            ResultSet resultset = connection.executeUpdate("INSERT INTO bestelling (`bestelId`, `tafelId`) VALUES(" + bestelling.getId() + "," + bestelling.getTafelId() + ");");
+            connection.executeSQLInsertStatement("INSERT INTO bestelling (`bestelId`, `tafelId`) VALUES(" + bestelling.getId() + "," + bestelling.getTafelId() + ");");
 
             for(Drank d : bestelling.getDranken()) {
-                ResultSet resultset2 = connection.executeUpdate("INSERT INTO drank_bestelling (`DrankID`, `BestelId`, `hoeveelheid`) VALUES (" + d.getDrankId() + "," + bestelling.getId() + ", `1`");
+                connection.executeSQLInsertStatement("INSERT INTO drank_bestelling (`DrankID`, `BestelId`, `hoeveelheid`) VALUES (" + d.getDrankId() + "," + bestelling.getId() + ", `1`");
             }
 
             for(Gerecht g : bestelling.getGerechten()) {
-                ResultSet resultset3 = connection.executeUpdate("INSERT INTO gerecht_bestelling (`GerechtID`, `BestelId`, `hoeveelheid`) VALUES (" + g.getGerechtId() + "," + bestelling.getId() + ", `1`");
+                connection.executeSQLInsertStatement("INSERT INTO gerecht_bestelling (`GerechtID`, `BestelId`, `hoeveelheid`) VALUES (" + g.getGerechtId() + "," + bestelling.getId() + ", `1`");
             }
 
 
@@ -40,12 +40,11 @@ public class BestellingDAO {
 
     public void addSimpleOrder(Order o) {
       DatabaseConnection conn = new DatabaseConnection();
-   if(connection.openConnection())
-   {
-      stmt = conn.createStatement();
+      if(connection.openConnection())
+      {
+        connection.executeSQLInsertStatement("INSERT INTO simpleorder (`itemID`, `tafelID`) VALUES(" + o.getID + "," + o.getTafelID + ");");
+      }
 
-      String sql = "INSERT INTO simpleorder (`itemID`, `tafelID`) VALUES(" + o.getID + "," + o.getTafelID + ");";
-      stmt.executeUpdate(sql);
+      connection.closeConnection();
     }
-}
 }
