@@ -3,6 +3,7 @@ package dataStorage;
 import businessEntity.Bestelling;
 import businessEntity.Drank;
 import businessEntity.Gerecht;
+import businessEntity.Order;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -39,10 +40,10 @@ public class BestellingDAO {
     }
 
     public void addSimpleOrder(Order o) {
-      DatabaseConnection conn = new DatabaseConnection();
+      DatabaseConnection connection = new DatabaseConnection();
       if(connection.openConnection())
       {
-        connection.executeSQLInsertStatement("INSERT INTO simpleorder (`itemID`, `tafelID`) VALUES(" + o.getID + "," + o.getTafelID + ");");
+        connection.executeSQLInsertStatement("INSERT INTO simpleorder (`itemID`, `tafelID`) VALUES(" + o.getID() + "," + o.getTafelID() + ");");
       }
 
       connection.closeConnection();
