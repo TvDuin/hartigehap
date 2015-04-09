@@ -8,6 +8,7 @@ package businessPresentation;
 //import java.util.ArrayList;
 
 import businessEntity.Order;
+import businessLogic.Manager;
 import dataStorage.BestellingDAO;
 import java.awt.Component;
 import java.util.ArrayList;
@@ -62,10 +63,10 @@ public class JPanel extends javax.swing.JPanel {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
-              BestellingDAO send = new BestellingDAO();
+              Manager m = new Manager();
 
               for(Order o : orders){
-                send.addSimpleOrder(o);
+                m.sendOrder(o);
               }
 
                 jButton1ActionPerformed(evt);
@@ -200,11 +201,15 @@ public class JPanel extends javax.swing.JPanel {
         jTextArea1.setText( combobox1 + " " + combobox2 );*/
 
         //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());
-        orders.add(new Order(Integer.parseInt(jTextField3.getText()), Integer.parseInt(jTextField1.getText())));
-        orders.add(new Order(Integer.parseInt(jTextField4.getText()), Integer.parseInt(jTextField1.getText())));
+        if(!jTextField3.getText().isEmpty()) {
+          jTextArea1.append(jTextField3.getText() + "X" + jTextField1.getText() + " \n");
+          orders.add(new Order(Integer.parseInt(jTextField3.getText()), Integer.parseInt(jTextField1.getText())));
+        }
 
-        //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());
-        jTextArea1.append(jTextField3.getText() + "X" + jTextField1.getText() + " \n" + jTextField4.getText() + "X" + jTextField1.getText() + "\n");
+        if(!jTextField4. getText().isEmpty()) {
+            jTextArea1.append(jTextField4.getText() + "X" + jTextField1.getText() + "\n");
+          orders.add(new Order(Integer.parseInt(jTextField4.getText()), Integer.parseInt(jTextField1.getText())));
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed

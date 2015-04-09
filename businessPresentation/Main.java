@@ -5,8 +5,6 @@ package businessPresentation;
 import dataStorage.DrankDAO;
 import javax.swing.JFrame;
 
-
-
 public class Main extends JFrame {
 	public static void main(String args[]) {
 		JFrame frame = new Main();
