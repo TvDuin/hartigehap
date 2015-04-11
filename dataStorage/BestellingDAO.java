@@ -43,11 +43,11 @@ public class BestellingDAO {
       DatabaseConnection connection = new DatabaseConnection();
       if(connection.openConnection())
       {
-        if(o.getType == 1) {
+        if(o.getType() == 1) {
           connection.executeSQLInsertStatement("INSERT INTO drank_order (`TafelID`, `DrankID`) VALUES(" + o.getTafelID() + "," + o.getID() + ");");
         }
 
-        else if(o.getType == 0) {
+        else if(o.getType() == 0) {
           connection.executeSQLInsertStatement("INSERT INTO gerecht_order (`TafelID`, `GerechtID`) VALUES(" + o.getTafelID() + "," + o.getID() + ");");
         }
       }

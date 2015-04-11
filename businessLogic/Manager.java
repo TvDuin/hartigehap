@@ -13,6 +13,6 @@ public class Manager {
   }
 
   public void sendOrder(Order o) {  //Method which a=calls the methode addSimpleOrder() of the BestellingDAO class. -> Sends a single order to the database.
-    send.addSimpleOrder(o);
+    bestelling.addSimpleOrder(o);
   }
 }

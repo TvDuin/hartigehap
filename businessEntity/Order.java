@@ -9,8 +9,9 @@ public class Order {
   int type; //Sets the order type; 1 = Drank, 0 = gerecht.
   int tafelID; //Self explanatory.
 
-  public Order(int id, int tafelID){
+  public Order(int id, int type, int tafelID){
     this.id = id;
+    this.type = type;
     this.tafelID = tafelID;
   }
 
