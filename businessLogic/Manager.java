@@ -11,7 +11,6 @@ public class Manager {
   }
 
   public void sendOrder(Order o) {
-
     send.addSimpleOrder(o);
   }
 }
