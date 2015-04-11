@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 public class BestellingDAO {
     public BestellingDAO()
-    {
+    { 
     // Nothing to be initialized. This is a stateless class. Constructor
     // has been added to explicitely make this clear.
     }
