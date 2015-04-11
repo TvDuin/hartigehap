@@ -30,23 +30,22 @@
     PRIMARY KEY (`DrankID`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-  --Table Drank_bestelling
+  --Table Drank_bestelling --This is a temporary table that only stores items
+  --while there are people sitting there, record gets emptied when they pay.
   CREATE TABLE IF NOT EXISTS `drank_order` (
+    `ID` int(5) NOT NULL AUTO_INCREMENT,
     `TafelID` int(5) NOT NULL,
-    `ItemID` int(5) NOT NULL,
-    `hoeveelheid` int(10) NOT NULL,
-    PRIMARY KEY (`DrankID`,`BestelId`),
-    KEY `Drank1` (`BestelId`)
+    `DrankID` int(5) NOT NULL,
+    PRIMARY KEY (`ID`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-    --Tabel gerecht_bestelling
+    --Tabel gerecht_bestelling --This is a temporary table that only stores items
+    --while there are people sitting there, record gets emptied when they pay.
     CREATE TABLE IF NOT EXISTS `gerecht_order` (
+      `ID` int(5) NOT NULL AUTO_INCREMENT,
       `TafelID` int(5) NOT NULL,
       `GerechtID` int(5) NOT NULL,
-      `BestelId` int(10) NOT NULL,
-      `hoeveelheid` int(2) NOT NULL,
-      PRIMARY KEY (`GerechtID`,`BestelId`),
-      KEY `Ger_Ger` (`BestelId`)
+      PRIMARY KEY (`ID`)
     ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
   --Table gebruiker

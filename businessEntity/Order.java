@@ -5,7 +5,7 @@ package businessEntity;
 //gets an ID assigned by the database (AUTO_INCREMENT) which incorporates the whole order, not the individual items as ID's (which is the case here).
 
 public class Order {
-  int id; //Temporary order id, every single item has a different id.
+  int id; //The ID that the item has E.G. Cola = 12345678 (must be 8 numbers long).
   int type; //Sets the order type; 1 = Drank, 0 = gerecht.
   int tafelID; //Self explanatory.
 

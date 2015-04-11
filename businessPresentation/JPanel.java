@@ -192,13 +192,13 @@ public class JPanel extends javax.swing.JPanel {
 
         //jTextArea1.setText(jTextField3.getText() + " \n" + jTextField4.getText());
         if(!jTextField3.getText().isEmpty()) {
-          jTextArea1.append(jTextField3.getText() + "X" + jTextField1.getText() + " \n");
-          orders.add(new Order(Integer.parseInt(jTextField3.getText()), Integer.parseInt(jTextField1.getText())));
+          jTextArea1.append(jTextField3.getText() + " Tafel: " + jTextField1.getText() + " \n");
+          orders.add(new Order(Integer.parseInt(jTextField3.getText()), 0, Integer.parseInt(jTextField1.getText())));
         }
 
         if(!jTextField4. getText().isEmpty()) {
-            jTextArea1.append(jTextField4.getText() + "X" + jTextField1.getText() + "\n");
-          orders.add(new Order(Integer.parseInt(jTextField4.getText()), Integer.parseInt(jTextField1.getText())));
+            jTextArea1.append(jTextField4.getText() + " Tafel: " + jTextField1.getText() + "\n");
+          orders.add(new Order(Integer.parseInt(jTextField4.getText()), 1, Integer.parseInt(jTextField1.getText())));
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 

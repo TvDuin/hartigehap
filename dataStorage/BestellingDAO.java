@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 public class BestellingDAO {
     public BestellingDAO()
-    { 
+    {
     // Nothing to be initialized. This is a stateless class. Constructor
     // has been added to explicitely make this clear.
     }
@@ -43,7 +43,13 @@ public class BestellingDAO {
       DatabaseConnection connection = new DatabaseConnection();
       if(connection.openConnection())
       {
-        connection.executeSQLInsertStatement("INSERT INTO simpleorder (`itemID`, `tafelID`) VALUES(" + o.getID() + "," + o.getTafelID() + ");");
+        if(o.getType == 1) {
+          connection.executeSQLInsertStatement("INSERT INTO drank_order (`TafelID`, `DrankID`) VALUES(" + o.getTafelID() + "," + o.getID() + ");");
+        }
+
+        else if(o.getType == 0) {
+          connection.executeSQLInsertStatement("INSERT INTO gerecht_order (`TafelID`, `GerechtID`) VALUES(" + o.getTafelID() + "," + o.getID() + ");");
+        }
       }
 
       connection.closeConnection();
