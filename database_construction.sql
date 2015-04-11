@@ -13,6 +13,7 @@
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
   --Table Simpleorder
+  --May not be necessary to have this table!?
   CREATE TABLE IF NOT EXISTS `simpleorder`(
     `ID` int(4) NOT NULL AUTO_INCREMENT,
     `ItemID` int(12) NOT NULL,
@@ -30,13 +31,23 @@
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
   --Table Drank_bestelling
-  CREATE TABLE IF NOT EXISTS `drank_bestelling` (
-    `DrankID` int(5) NOT NULL,
-    `BestelID` int(10) NOT NULL,
+  CREATE TABLE IF NOT EXISTS `drank_order` (
+    `TafelID` int(5) NOT NULL,
+    `ItemID` int(5) NOT NULL,
     `hoeveelheid` int(10) NOT NULL,
     PRIMARY KEY (`DrankID`,`BestelId`),
     KEY `Drank1` (`BestelId`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+    --Tabel gerecht_bestelling
+    CREATE TABLE IF NOT EXISTS `gerecht_order` (
+      `TafelID` int(5) NOT NULL,
+      `GerechtID` int(5) NOT NULL,
+      `BestelId` int(10) NOT NULL,
+      `hoeveelheid` int(2) NOT NULL,
+      PRIMARY KEY (`GerechtID`,`BestelId`),
+      KEY `Ger_Ger` (`BestelId`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
   --Table gebruiker
   CREATE TABLE IF NOT EXISTS `gebruiker` (
@@ -55,15 +66,6 @@
     PRIMARY KEY (`GerechtID`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-  --Tabel gerecht_bestelling
-  CREATE TABLE IF NOT EXISTS `gerecht_bestelling` (
-    `GerechtID` int(5) NOT NULL,
-    `BestelId` int(10) NOT NULL,
-    `hoeveelheid` int(2) NOT NULL,
-    PRIMARY KEY (`GerechtID`,`BestelId`),
-    KEY `Ger_Ger` (`BestelId`)
-  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
   --Tabel ingredient
   CREATE TABLE IF NOT EXISTS `ingredient` (
     `ingredientID` int(10) NOT NULL,
@@ -79,26 +81,3 @@
     PRIMARY KEY (`ingredientID`,`gerechtID`),
     KEY `Ing_Ger` (`gerechtID`)
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-  --
-  -- Beperkingen voor gedumpte tabellen
-  --
-
-  ALTER TABLE `drank_bestelling`
-    ADD CONSTRAINT `Drank1` FOREIGN KEY (`BestelID`) REFERENCES `bestelling` (`BestelID`) ON DELETE CASCADE ON UPDATE CASCADE,
-    ADD CONSTRAINT `Bestel2` FOREIGN KEY (`DrankID`) REFERENCES `drank` (`DrankID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-  --
-  -- Beperkingen voor tabel `gerecht_bestelling`
-  --
-  ALTER TABLE `gerecht_bestelling`
-    ADD CONSTRAINT `Ger_Ger` FOREIGN KEY (`BestelID`) REFERENCES `bestelling` (`BestelID`) ON DELETE CASCADE ON UPDATE CASCADE,
-    ADD CONSTRAINT `Ger_bestel` FOREIGN KEY (`GerechtID`) REFERENCES `gerecht` (`GerechtID`) ON DELETE CASCADE ON UPDATE CASCADE;
-
-  --
-  -- Beperkingen voor tabel `ingredient_gerecht`
-  --
-  ALTER TABLE `ingredient_gerecht`
-    ADD CONSTRAINT `Ing_Ger` FOREIGN KEY (`gerechtID`) REFERENCES `gerecht` (`GerechtID`) ON DELETE CASCADE ON UPDATE CASCADE,
-    ADD CONSTRAINT `ing_ing` FOREIGN KEY (`ingredientID`) REFERENCES `ingredient` (`ingredientID`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -6,6 +6,7 @@ package businessEntity;
 
 public class Order {
   int id; //Temporary order id, every single item has a different id.
+  int type; //Sets the order type; 1 = Drank, 0 = gerecht.
   int tafelID; //Self explanatory.
 
   public Order(int id, int tafelID){
@@ -19,5 +20,9 @@ public class Order {
 
   public int getTafelID() {
     return tafelID;
+  }
+
+  public int getType() {
+    return type;
   }
 }
