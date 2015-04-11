@@ -1,30 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package businessPresentation;
-
-//import java.util.ArrayList;
 
 import businessEntity.Order;
 import businessLogic.Manager;
-import dataStorage.BestellingDAO;
 import java.awt.Component;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Maarten
- */
+//Author: Group D2, Avans
+
 public class JPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form JPanel
      */
     private ArrayList<Order> orders;
-    //private ArrayList<String> combobox2;
+    private Manager m;
 
     public JPanel() {
         initComponents();
@@ -63,7 +53,7 @@ public class JPanel extends javax.swing.JPanel {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
-              Manager m = new Manager();
+              m = new Manager();
 
               for(Order o : orders){
                 m.sendOrder(o);

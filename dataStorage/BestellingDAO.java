@@ -15,7 +15,7 @@ public class BestellingDAO {
     // has been added to explicitely make this clear.
     }
 
-    public void addBestelling(Bestelling bestelling) { //Method which adds orders to the DB
+    public void addBestelling(Bestelling bestelling) { //The more complex method which adds orders to the DB
 
            DatabaseConnection connection = new DatabaseConnection();
         if(connection.openConnection())
@@ -39,7 +39,7 @@ public class BestellingDAO {
 
     }
 
-    public void addSimpleOrder(Order o) {
+    public void addSimpleOrder(Order o) { //The simplified version of the method above. This method gets called to insert simple orders in to the database.
       DatabaseConnection connection = new DatabaseConnection();
       if(connection.openConnection())
       {

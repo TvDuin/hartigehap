@@ -1,6 +1,6 @@
 package businessEntity;
 
-//Contains all information about every dish
+//Contains all information about every complete order. This class gets instantiated after the data has been retrieved from the database, either by the waiters or the kitchen personell.
 
 import java.util.ArrayList;
 
