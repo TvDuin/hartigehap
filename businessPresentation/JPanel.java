@@ -196,6 +196,8 @@ public class JPanel extends javax.swing.JPanel {
           orders.add(new Order(Integer.parseInt(jTextField3.getText()), 0, Integer.parseInt(jTextField1.getText())));
         }
 
+        //TEST
+
         if(!jTextField4. getText().isEmpty()) {
             jTextArea1.append(jTextField4.getText() + " Tafel: " + jTextField1.getText() + "\n");
           orders.add(new Order(Integer.parseInt(jTextField4.getText()), 1, Integer.parseInt(jTextField1.getText())));
